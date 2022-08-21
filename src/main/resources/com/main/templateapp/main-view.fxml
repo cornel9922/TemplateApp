@@ -19,12 +19,12 @@
       </Text>
       <AnchorPane layoutY="62.0" prefHeight="338.0" prefWidth="700.0" style="-fx-background-color: white;">
          <children>
-            <TextField layoutX="238.0" layoutY="108.0" promptText="Логин">
+            <TextField fx:id="signIn_login" layoutX="238.0" layoutY="108.0" promptText="Логин">
                <font>
                   <Font name="Arial Bold Italic" size="18.0" />
                </font>
             </TextField>
-            <PasswordField layoutX="238.0" layoutY="169.0" promptText="Пароль">
+            <PasswordField fx:id="signIn_pass" layoutX="238.0" layoutY="169.0" promptText="Пароль">
                <font>
                   <Font name="Arial Bold Italic" size="18.0" />
                </font>
@@ -34,7 +34,7 @@
                   <Font name="Arial" size="34.0" />
                </font>
             </Text>
-            <Button layoutX="304.0" layoutY="257.0" mnemonicParsing="false" style="-fx-background-color: black;" text="Войти" textFill="WHITE">
+            <Button fx:id="signInButton" layoutX="304.0" layoutY="257.0" mnemonicParsing="false" style="-fx-background-color: black;" text="Войти" textFill="WHITE">
                <font>
                   <Font name="Arial Bold Italic" size="19.0" />
                </font>
@@ -46,7 +46,7 @@
             <Image url="@../../../../../../../images/share.png" />
          </image>
       </ImageView>
-      <Button layoutX="522.0" layoutY="21.0" mnemonicParsing="false" style="-fx-background-color: #dcbf40;" text="Зарегистрироваться" textAlignment="JUSTIFY">
+      <Button fx:id="signUpButton" layoutX="522.0" layoutY="21.0" mnemonicParsing="false" style="-fx-background-color: #dcbf40;" text="Зарегистрироваться" textAlignment="JUSTIFY">
          <font>
             <Font name="Arial Bold Italic" size="13.0" />
          </font>

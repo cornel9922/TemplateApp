@@ -7,7 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class MainPageController {
+public class SignUpController {
 
     @FXML
     private ResourceBundle resources;
@@ -16,23 +16,25 @@ public class MainPageController {
     private URL location;
 
     @FXML
-    private Button signInButton;
+    private TextField country_field;
 
     @FXML
-    private TextField signIn_login;
+    private TextField firstName_field;
 
     @FXML
-    private PasswordField signIn_pass;
+    private TextField lastName_field;
+
+    @FXML
+    private TextField login_field;
+
+    @FXML
+    private PasswordField pass_field;
 
     @FXML
     private Button signUpButton;
 
     @FXML
     void initialize() {
-
-        signInButton.setOnAction(event -> {
-            System.out.println("Hello new customer!");
-        });
     }
 
 }
