@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #3f64c5;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.templateapp.SignInController">
+   <children>
+      <Text layoutX="287.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="itProger">
+         <font>
+            <Font name="Arial Bold Italic" size="33.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutY="62.0" prefHeight="338.0" prefWidth="700.0" style="-fx-background-color: white;">
+         <children>
+            <Text layoutX="110.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Добро пожаловать, Семпай!">
+               <font>
+                  <Font name="Arial Bold Italic" size="33.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="250.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/stayhome.png" />
+               </image>
+            </ImageView>
+            <TextField layoutX="54.0" layoutY="114.0" prefHeight="187.0" prefWidth="150.0" promptText="Напиши свои мысли" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
