@@ -13,5 +13,27 @@ public class DatabaseHandler extends Configs{
         return dbConnection;
     }
 
+    public void signUpUser(User user) {
+        String insert = "INSERT INTO " + Const.USER_TABLE + "(" +
+                Const.USERS_FIRSTNAME + "," + Const.USERS_LASTNAME + ","
+                + Const.USERS_USERNAME + "," + Const.USERS_PASSWORD + ","
+                + Const.USERS_LOCATION + "," + Const.USERS_GENDER + ")"
+                + "VALUES(?,?,?,?,?,?)";
+
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(insert);
+            prSt.setString(1, user.getFirstName());
+            prSt.setString(2, user.getLastName());
+            prSt.setString(3, user.getUserName());
+            prSt.setString(4, user.getPassword());
+            prSt.setString(5, user.getLocation());
+            prSt.setString(6, user.getGender());
+            prSt.executeUpdate();
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
     //write db Statements
 }

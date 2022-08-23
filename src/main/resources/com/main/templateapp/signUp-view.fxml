@@ -24,21 +24,6 @@
                         <Font name="Arial Bold Italic" size="18.0" />
                     </font>
                 </TextField>
-                <PasswordField fx:id="pass_field" layoutX="461.0" layoutY="134.0" promptText="Пароль">
-                    <font>
-                        <Font name="Arial Bold Italic" size="18.0" />
-                    </font>
-                </PasswordField>
-                <Text fill="#a6a6a6" layoutX="250.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Регистрация">
-                    <font>
-                        <Font name="Arial" size="34.0" />
-                    </font>
-                </Text>
-                <Button fx:id="signUpButton" layoutX="293.0" layoutY="275.0" mnemonicParsing="false" style="-fx-background-color: black;" text="Создать" textFill="WHITE">
-                    <font>
-                        <Font name="Arial Bold Italic" size="19.0" />
-                    </font>
-                </Button>
             <TextField fx:id="lastName_field" layoutX="461.0" layoutY="81.0" promptText="Фамилия">
                <font>
                   <Font name="Arial Bold Italic" size="18.0" />
@@ -49,13 +34,28 @@
                   <Font name="Arial Bold Italic" size="18.0" />
                </font>
             </TextField>
+                <PasswordField fx:id="pass_field" layoutX="461.0" layoutY="134.0" promptText="Пароль">
+                    <font>
+                        <Font name="Arial Bold Italic" size="18.0" />
+                    </font>
+                </PasswordField>
+            <CheckBox fx:id="signUpCheckBoxMale" layoutX="25.0" layoutY="185.0" mnemonicParsing="false" selected="true" text="Мужчина" />
+            <CheckBox fx:id="signUpCheckBoxFemale" layoutX="137.0" layoutY="185.0" mnemonicParsing="false" text="Женщина" />
             <TextField fx:id="country_field" layoutX="236.0" layoutY="217.0" promptText="Страна">
                <font>
                   <Font name="Arial Bold Italic" size="18.0" />
                </font>
             </TextField>
-            <CheckBox layoutX="25.0" layoutY="185.0" mnemonicParsing="false" selected="true" text="Мужчина" />
-            <CheckBox layoutX="137.0" layoutY="185.0" mnemonicParsing="false" text="Женщина" />
+                <Text fill="#a6a6a6" layoutX="250.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Регистрация">
+                    <font>
+                        <Font name="Arial" size="34.0" />
+                    </font>
+                </Text>
+                <Button fx:id="signUpButton" layoutX="293.0" layoutY="275.0" mnemonicParsing="false" style="-fx-background-color: black;" text="Создать" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Bold Italic" size="19.0" />
+                    </font>
+                </Button>
             </children>
         </AnchorPane>
       <ImageView fitHeight="47.0" fitWidth="50.0" layoutX="26.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">

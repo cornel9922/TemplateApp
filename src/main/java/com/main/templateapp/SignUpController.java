@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -34,7 +35,44 @@ public class SignUpController {
     private Button signUpButton;
 
     @FXML
+    private CheckBox signUpCheckBoxFemale;
+
+    @FXML
+    private CheckBox signUpCheckBoxMale;
+
+    @FXML
     void initialize() {
+
+        signUpButton.setOnAction(event -> {
+
+            signUpNewUser();
+
+
+        });
+
+    }
+
+    private void signUpNewUser() {
+
+        DatabaseHandler dbHandler = new DatabaseHandler();
+
+        String firstName = firstName_field.getText();
+        String lastName = lastName_field.getText();
+        String userName= login_field.getText();
+        String password = pass_field.getText();
+        String location = country_field.getText();
+        String gender = "";
+
+        if(signUpCheckBoxMale.isSelected())
+            gender = "Мужской";
+        else
+            gender = "Женский";
+
+        User user = new User(firstName, lastName, userName, password, location, gender);
+
+
+        dbHandler.signUpUser(user);
+
     }
 
 }

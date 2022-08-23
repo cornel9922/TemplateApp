@@ -61,7 +61,6 @@ public class MainPageController {
             else
                 System.out.println("Login or Password is empty!");
 
-
         });
     }
 
