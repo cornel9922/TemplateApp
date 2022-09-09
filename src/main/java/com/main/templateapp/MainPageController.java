@@ -2,7 +2,11 @@ package com.main.templateapp;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import animations.Shake;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -65,6 +69,32 @@ public class MainPageController {
     }
 
     private void loginUser(String loginText, String loginPassword) {
+        DatabaseHandler dbHandler = new DatabaseHandler();
+        User user = new User();
+        user.setUserName(loginText);
+        user.setPassword(loginPassword);
+        ResultSet result = dbHandler.getUser(user);
+
+        int counter = 0;
+
+        while(true) {
+            try {
+                if (!result.next()) break;
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            counter++;
+        }
+
+        if (counter >= 1) {
+            System.out.println("Success!");
+        }
+        else {
+            Shake userLoginAnim = new Shake(signIn_login);
+            Shake userPassAnim = new Shake(signIn_pass);
+            userLoginAnim.playAnim();
+            userPassAnim.playAnim();
+        }
     }
 
 }
