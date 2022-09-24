@@ -40,20 +40,7 @@ public class MainPageController {
     void initialize() {
 
         signUpButton.setOnAction(event -> {
-            signUpButton.getScene().getWindow().hide();
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainPage.class.getResource("signUp-view.fxml"));
-            try {
-                loader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
+            openNewScene("signUp-view.fxml");
         });
 
         signInButton.setOnAction(event -> {
@@ -87,7 +74,7 @@ public class MainPageController {
         }
 
         if (counter >= 1) {
-            System.out.println("Success!");
+            openNewScene("signIn-view.fxml");
         }
         else {
             Shake userLoginAnim = new Shake(signIn_login);
@@ -95,6 +82,23 @@ public class MainPageController {
             userLoginAnim.playAnim();
             userPassAnim.playAnim();
         }
+    }
+
+    public void openNewScene(String window) {
+        signUpButton.getScene().getWindow().hide();
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(MainPage.class.getResource(window));
+        try {
+            loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
     }
 
 }
